@@ -1,0 +1,143 @@
+Router>enab
+Password:
+Router#show runn
+Building configuration...
+
+Current configuration:
+!
+version 11.3
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Router
+!
+enable secret 5 $1$HBx1$Sf4pkCh1NYusTlahJD2tq.
+enable password vtrsjq
+!
+ip name-server 16.108.1.12
+!
+!
+!
+interface Ethernet0/0
+ ip address 192.0.0.244 255.255.255.0 secondary
+ ip address 16.108.20.2 255.255.255.0 secondary
+ ip address 16.108.1.2 255.255.255.0
+!
+interface Serial0/0
+ no ip address
+ no ip mroute-cache
+ shutdown
+! 
+ no ip address
+ shutdown
+!
+interface Serial0/1
+ no ip address
+ shutdown
+!
+interface Serial1/0
+ no ip address
+ shutdown
+!
+interface Serial1/1
+ no ip address
+ shutdown
+!
+interface Serial1/2
+ no ip address
+ shutdown
+!
+interface Serial1/3
+ no ip address
+ shutdown
+!
+interface Serial1/4
+ no ip address
+ shutdown
+!
+interface Serial1/5
+ no ip address
+ shutdown
+!
+interface Serial1/6
+ no ip address
+ shutdown
+!
+interface Serial1/7
+ no ip address
+ shutdown
+!
+interface Serial2/0
+ no ip address
+ shutdown
+!
+interface Serial2/1
+ no ip address
+ shutdown
+!
+interface Serial2/2
+ no ip address
+ shutdown
+!
+interface Serial2/3
+ no ip address
+ shutdown
+!
+interface Serial2/4
+ no ip address
+ shutdown
+!
+interface Serial2/5
+ no ip address
+ shutdown
+!
+interface Serial2/6
+ no ip address
+ shutdown
+!
+interface Serial2/7
+ no ip address
+ shutdown
+!
+interface Serial3/0
+ ip address 16.1.8.26 255.255.255.252
+ encapsulation frame-relay
+ shutdown
+ frame-relay interface-dlci 100
+ frame-relay lmi-type cisco
+!
+interface Serial3/1
+ ip address 16.1.8.26 255.255.255.252
+!
+interface Serial3/2
+ no ip address
+ shutdown
+! al3/3
+ no ip address
+ shutdown
+!
+autonomous-system 116
+!
+router ospf 106
+ network 16.1.8.24 0.0.0.3 area 0
+ network 16.108.1.0 0.0.0.255 area 6
+ network 16.108.16.0 0.0.0.255 area 6
+ network 16.108.20.0 0.0.0.255 area 6
+ network 16.108.25.0 0.0.0.255 area 6
+ network 16.108.30.0 0.0.0.255 area 6
+!
+ip classless
+!
+dialer-list 1 protocol ip permit t
+snmp-server community public RO
+!
+line con 0
+line aux 0
+line vty 0 4
+ password cisco
+ login
+!
+end
+
+Router#

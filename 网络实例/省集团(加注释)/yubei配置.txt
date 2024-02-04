@@ -1,0 +1,46 @@
+
+yubei>enab
+Password:
+yubei#show start
+Using 589 out of 32762 bytes
+!
+version 11.2
+no service password-encryption
+service udp-small-servers
+service tcp-small-servers
+!
+hostname yubei
+!
+enable secret 5 $1$6xZp$S5NrOAGkjiN6YjIARuZRZ0
+enable password cisco
+!
+!
+interface Ethernet0
+ ip address 16.109.120.2 255.255.255.0
+ no ip route-cache
+ no ip mroute-cache
+!
+interface Serial0
+ ip address 16.108.19.22 255.255.255.252
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+router ospf 106
+ network 16.109.120.0 0.0.0.255 area 6
+ network 16.108.19.20 0.0.0.3 area 6
+!
+no ip classless
+!
+line con 0
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ password abc
+ login
+!
+end
+
+yubei#
+                                                                   

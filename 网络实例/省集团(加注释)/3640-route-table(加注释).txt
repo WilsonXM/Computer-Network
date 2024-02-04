@@ -1,0 +1,39 @@
+cisco3640#
+cisco3640#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, * - candidate default
+       U - per-user static route, o - ODR
+
+Gateway of last resort is not set
+
+     16.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O       16.109.120.0/24 [110/74] via 16.108.19.22, 00:20:35, Serial3/2
+O       16.109.110.0/24 [110/74] via 16.108.19.18, 00:20:35, Serial3/1
+R       16.108.30.0/24 [120/1] via 16.108.19.30, 00:00:11, Ethernet0/0
+R       16.108.25.0/24 [120/1] via 16.108.19.30, 00:00:11, Ethernet0/0
+R       16.108.20.0/24 [120/1] via 16.108.19.30, 00:00:11, Ethernet0/0
+C       16.108.19.28/30 is directly connected, Ethernet0/0
+C       16.108.19.20/30 is directly connected, Serial3/2
+R       16.108.1.0/24 [120/1] via 16.108.19.30, 00:00:11, Ethernet0/0
+C       16.108.19.16/30 is directly connected, Serial3/1
+C    198.198.1.0/24 is directly connected, Ethernet0/1
+cisco3640#
+
+目的网络	NETMASK		从哪个接口转发		下一个路由器	目的网络所在地
+======================================================================================
+16.109.120.0	255.255.255.0	Serial3/2		16.108.19.22	一处
+16.109.110.0	255.255.255.0	Serial3/1		16.108.19.18	XX工作处
+16.108.30.0	255.255.255.0	Ethernet0/0		16.108.19.30	三部
+16.108.25.0	255.255.255.0	Ethernet0/0		16.108.19.30	二部
+16.108.20.0	255.255.255.0	Ethernet0/0		16.108.19.30	一部
+16.108.19.28	255.255.255.252	Ethernet0/0		直接连接	链路Cisco 3640--Intel550
+16.108.19.20	255.255.255.252	Serial3/2		直接连接	链路:一处--YY站
+16.108.1.0	255.255.255.0	Ethernet0/0		16.108.19.30	网控中心
+16.108.19.16	255.255.255.252	Serial3/1		直接连接	链路 YY站--XX工作处      
+198.198.1.0	255.255.255.0	Ethernet0/1		直接连接	笔记本电脑临时网络  
+
+
+

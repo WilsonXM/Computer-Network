@@ -1,0 +1,45 @@
+
+gongzuo#
+gongzuo#
+gongzuo#show runn
+Building configuration...
+
+Current configuration:
+!
+version 11.2
+no service password-encryption
+service udp-small-servers
+service tcp-small-servers
+!
+hostname gongzuo
+!
+enable secret 5 $1$ubCJ$DJbFG2dqKIqfwwy9ucSGk.
+enable password cisco
+!
+!
+interface Ethernet0
+ ip address 16.109.110.2 255.255.255.0
+!
+interface Serial0
+ ip address 16.108.19.18 255.255.255.252
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+router ospf 106
+ network 16.109.110.0 0.0.0.255 area 6
+ network 16.108.19.16 0.0.0.3 area 6
+!
+no ip classless
+!
+line con 0
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ password abc
+ login
+!
+end
+
+gongzuo#                                                
