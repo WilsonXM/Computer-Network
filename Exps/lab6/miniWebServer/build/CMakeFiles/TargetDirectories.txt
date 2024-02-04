@@ -1,0 +1,3 @@
+D:/Subjects/CN/lab6/miniWebServer/build/CMakeFiles/WebServer.dir
+D:/Subjects/CN/lab6/miniWebServer/build/CMakeFiles/edit_cache.dir
+D:/Subjects/CN/lab6/miniWebServer/build/CMakeFiles/rebuild_cache.dir
