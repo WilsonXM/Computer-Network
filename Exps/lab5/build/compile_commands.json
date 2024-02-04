@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/Subjects/CN/lab5/build",
+  "command": "D:\\Some_Downloads\\x86_64-8.1.0-release-posix-seh\\mingw64\\bin\\g++.exe  @CMakeFiles/server.dir/includes_CXX.rsp -g -o CMakeFiles\\server.dir\\server.cpp.obj -c D:\\Subjects\\CN\\lab5\\sources\\server.cpp",
+  "file": "D:/Subjects/CN/lab5/sources/server.cpp",
+  "output": "CMakeFiles/server.dir/server.cpp.obj"
+},
+{
+  "directory": "D:/Subjects/CN/lab5/build",
+  "command": "D:\\Some_Downloads\\x86_64-8.1.0-release-posix-seh\\mingw64\\bin\\g++.exe  @CMakeFiles/server.dir/includes_CXX.rsp -g -o CMakeFiles\\server.dir\\protocol.cpp.obj -c D:\\Subjects\\CN\\lab5\\sources\\protocol.cpp",
+  "file": "D:/Subjects/CN/lab5/sources/protocol.cpp",
+  "output": "CMakeFiles/server.dir/protocol.cpp.obj"
+}
+]
